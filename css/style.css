@@ -781,6 +781,14 @@ button, .state, .filter-chip {
 
   .map-hint { font-size: 15px; }
 
+  .map-controls {
+    flex-direction: row;
+    top: 14px;
+    right: 14px;
+    bottom: auto;
+    gap: 6px;
+  }
+
   .side-panel {
     position: static;
     max-height: none;
@@ -810,6 +818,9 @@ button, .state, .filter-chip {
 
   .btn { font-size: 10px; padding: 10px 11px; }
   .btn-ghost { padding: 8px 10px; }
+
+  .map-btn { width: 44px; height: 42px; font-size: 16px; }
+  .map-btn-reset { font-size: 9px; padding: 0 10px; }
 
   .layout { padding: 10px; }
 
