@@ -66,6 +66,22 @@
       });
   }
 
+  function reloadNotes() {
+    var btn = el('btn-reload');
+    if (btn) btn.disabled = true;
+    return Storage.loadNotes()
+      .then(function () {
+        refreshAll();
+        showToast('Actualizado', 'ok');
+      })
+      .catch(function () {
+        showToast('No se pudo actualizar', 'error');
+      })
+      .then(function () {
+        if (btn) btn.disabled = false;
+      });
+  }
+
   function showEmpty() {
     el('panel-empty').classList.remove('hidden');
     el('panel-state').classList.add('hidden');
@@ -327,6 +343,7 @@
     el('btn-close').addEventListener('click', function () { Notes.close(); });
     el('btn-close-modal').addEventListener('click', closeModal);
     el('btn-cancel').addEventListener('click', closeModal);
+    el('btn-reload').addEventListener('click', reloadNotes);
 
     el('note-modal').addEventListener('click', function (e) {
       if (e.target === el('note-modal')) closeModal();
