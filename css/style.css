@@ -31,9 +31,15 @@ body {
   line-height: 1.35;
   min-height: 100vh;
   image-rendering: pixelated;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .hidden { display: none !important; }
+
+button, .state, .filter-chip {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
 
 /* ---------- Overlays CRT ---------- */
 .crt {
@@ -688,10 +694,81 @@ body {
 
 /* ---------- Responsive ---------- */
 @media (max-width: 860px) {
-  .layout { grid-template-columns: 1fr; }
-  .side-panel { position: static; max-height: none; }
+  body { font-size: 20px; }
+
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .topbar {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .brand { flex-basis: 100%; }
   .logo { font-size: 14px; }
-  .legend { position: static; flex-direction: row; flex-wrap: wrap; margin-top: 10px; }
-  .topbar { flex-wrap: wrap; }
-  .whoami { order: 3; }
+  .subtitle { font-size: 16px; }
+
+  .topbar-right {
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 8px;
+  }
+
+  .map-panel {
+    min-height: 0;
+    padding: 8px;
+  }
+
+  .map-hint { font-size: 15px; }
+
+  .side-panel {
+    position: static;
+    max-height: none;
+  }
+
+  .legend {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  body { font-size: 19px; }
+
+  .topbar { padding: 10px; }
+  .logo { font-size: 12px; }
+  .subtitle { font-size: 15px; }
+  .topbar-right { gap: 6px; }
+
+  .whoami,
+  .stat { padding: 4px 8px; }
+  .whoami-select { font-size: 18px; }
+  .stat-num { font-size: 14px; }
+
+  .btn { font-size: 10px; padding: 10px 11px; }
+  .btn-ghost { padding: 8px 10px; }
+
+  .layout { padding: 10px; }
+
+  .panel-title { font-size: 12px; }
+  .note-title { font-size: 11px; }
+  .note-action { padding: 6px 9px; }
+
+  .filter-chip { font-size: 7px; padding: 6px; }
+
+  .modal,
+  .onboarding { padding: 12px; }
+  .modal-box { padding: 14px; }
+  .ob-box { padding: 18px; }
+
+  .border-retro { box-shadow: 0 0 0 3px var(--ink), 5px 5px 0 0 var(--ink); }
+
+  .toast { font-size: 9px; }
 }
