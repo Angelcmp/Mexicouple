@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" role="img" aria-label="Playa">
+  <rect width="160" height="120" fill="#3ca0b8"/>
+  <circle cx="40" cy="30" r="16" fill="#ffd93d"/>
+  <rect y="80" width="160" height="40" fill="#d9a066"/>
+  <path d="M16 76 q12 -8 24 0 t24 0 t24 0 t24 0 t24 0 t24 0" fill="none" stroke="#f4e4c1" stroke-width="4"/>
+  <rect x="126" y="28" width="7" height="52" fill="#8a4a30"/>
+  <path d="M129 28 l24 10 l-24 10 z" fill="#3e8948"/>
+</svg>

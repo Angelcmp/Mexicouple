@@ -1,0 +1,102 @@
+{
+  "jalisco": [
+    {
+      "id": "sample-jal-1",
+      "titulo": "Cantaritos en Tequila",
+      "descripcion": "Bebida de tequila con cítricos en un jarrito de barro, imperdible en el pueblo de Tequila.",
+      "categoria": "comida",
+      "editor": "Angel",
+      "imagen": "assets/notes/placeholder-comida.svg"
+    },
+    {
+      "id": "sample-jal-2",
+      "titulo": "Tlaquepaque",
+      "descripcion": "Barrio de artesanías, galerías y música de mariachi en vivo.",
+      "categoria": "cultural",
+      "editor": "Nat"
+    },
+    {
+      "id": "sample-jal-3",
+      "titulo": "Malecón de Puerto Vallarta",
+      "descripcion": "Atardeceres, esculturas y comida de mar frente al Pacífico.",
+      "categoria": "playa",
+      "editor": "Nat",
+      "imagen": "assets/notes/placeholder-playa.svg"
+    }
+  ],
+  "oaxaca": [
+    {
+      "id": "sample-oax-1",
+      "titulo": "Monte Albán",
+      "descripcion": "Zona arqueológica zapoteca con una vista increíble del valle.",
+      "categoria": "cultural",
+      "editor": "Nat",
+      "imagen": "assets/notes/placeholder-pyramid.svg"
+    },
+    {
+      "id": "sample-oax-2",
+      "titulo": "Hierve el Agua",
+      "descripcion": "Cascadas petrificadas y pozas naturales de agua mineral.",
+      "categoria": "naturaleza",
+      "editor": "Angel"
+    },
+    {
+      "id": "sample-oax-3",
+      "titulo": "Mole oaxaqueño",
+      "descripcion": "Los siete moles, chocolate de leche y mezcal artesanal.",
+      "categoria": "comida",
+      "editor": "Nat"
+    }
+  ],
+  "quintana-roo": [
+    {
+      "id": "sample-roo-1",
+      "titulo": "Ruinas de Tulum",
+      "descripcion": "Ciudad maya amurallada frente al mar Caribe.",
+      "categoria": "cultural",
+      "editor": "Angel",
+      "imagen": "assets/notes/placeholder-pyramid.svg"
+    },
+    {
+      "id": "sample-roo-2",
+      "titulo": "Cenote Dos Ojos",
+      "descripcion": "Buceo y esnórquel en aguas cristalinas entre cavernas.",
+      "categoria": "aventura",
+      "editor": "Nat"
+    },
+    {
+      "id": "sample-roo-3",
+      "titulo": "Quinta Avenida en Playa del Carmen",
+      "descripcion": "Caminar, comer y comprar junto a la playa.",
+      "categoria": "playa",
+      "editor": "Angel",
+      "imagen": "assets/notes/placeholder-playa.svg"
+    }
+  ],
+  "cdmx": [
+    {
+      "id": "sample-cdmx-1",
+      "titulo": "Museo de Antropología",
+      "descripcion": "Imprescindible para entender la historia de México.",
+      "categoria": "cultural",
+      "editor": "Nat"
+    },
+    {
+      "id": "sample-cdmx-2",
+      "titulo": "Churros de El Moro",
+      "descripcion": "El clásico nocturno en el centro histórico.",
+      "categoria": "comida",
+      "editor": "Angel"
+    }
+  ],
+  "guanajuato": [
+    {
+      "id": "sample-gua-1",
+      "titulo": "San Miguel de Allende",
+      "descripcion": "Pueblo mágico de calles coloniales y atardeceres dorados.",
+      "categoria": "cultural",
+      "editor": "Nat",
+      "imagen": "assets/notes/placeholder-pyramid.svg"
+    }
+  ]
+}

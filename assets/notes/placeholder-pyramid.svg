@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" role="img" aria-label="Pirámide">
+  <rect width="160" height="120" fill="#3ca0b8"/>
+  <circle cx="128" cy="28" r="16" fill="#ffd93d"/>
+  <rect y="92" width="160" height="28" fill="#d9a066"/>
+  <polygon points="40,92 80,30 120,92" fill="#b86f50"/>
+  <polygon points="80,30 120,92 88,92" fill="#8a4a30"/>
+</svg>

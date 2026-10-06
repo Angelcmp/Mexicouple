@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mexicouple — Rutas de vacaciones en México</title>
+  <meta name="description" content="Mapa retro 2D para elegir juntos la mejor ruta de vacaciones en México.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="crt" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">MEXICOUPLE</span>
+      <span class="subtitle">elige la mejor ruta para tus vacaciones en méxico</span>
+    </div>
+    <div class="topbar-right">
+      <label class="whoami">
+        <span class="whoami-label">soy</span>
+        <select id="whoami" class="whoami-select"></select>
+      </label>
+      <div class="stat" title="Lugares guardados">
+        <span class="stat-num" id="stat-total">0</span>
+        <span class="stat-label">lugares</span>
+      </div>
+      <button id="btn-settings" class="btn btn-ghost" title="Ajustes">ajustes</button>
+      <button id="btn-help" class="btn btn-ghost" title="Volver a ver el tutorial">?</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="map-panel">
+      <div id="map" class="map" aria-label="Mapa de México"></div>
+      <div id="tooltip" class="tooltip hidden"></div>
+      <div class="map-hint">Haz clic en un estado para ver sus lugares</div>
+      <div class="legend" id="legend"></div>
+    </section>
+
+    <aside class="side-panel border-retro" id="side-panel">
+      <div id="panel-empty" class="panel-empty">
+        <div class="panel-empty-mark" aria-hidden="true"></div>
+        <p class="panel-empty-title">Elige un estado</p>
+        <p class="panel-empty-text">Haz clic en un estado del mapa para ver los lugares recomendados.</p>
+      </div>
+
+      <div id="panel-state" class="panel-state hidden">
+        <div class="panel-header">
+          <h2 id="panel-title" class="panel-title">Estado</h2>
+          <button id="btn-close" class="btn btn-ghost" title="Cerrar">x</button>
+        </div>
+        <button id="btn-add-note" class="btn btn-primary btn-block">+ Añadir lugar</button>
+        <div id="filters" class="filters"></div>
+        <p id="save-status" class="save-status"></p>
+        <ul id="note-list" class="note-list"></ul>
+      </div>
+    </aside>
+  </main>
+
+  <div id="note-modal" class="modal hidden">
+    <div class="modal-box border-retro">
+      <div class="modal-header">
+        <h3 id="modal-title" class="modal-title">Añadir lugar</h3>
+        <button id="btn-close-modal" class="btn btn-ghost" title="Cerrar">x</button>
+      </div>
+      <form id="note-form" class="note-form">
+        <label class="field">
+          <span class="field-label">Título</span>
+          <input type="text" id="f-titulo" required maxlength="80" placeholder="Ej. Cantaritos en Tequila">
+        </label>
+        <label class="field">
+          <span class="field-label">Descripción</span>
+          <textarea id="f-desc" rows="3" maxlength="500" placeholder="¿Qué hay que hacer o probar ahí?"></textarea>
+        </label>
+        <label class="field">
+          <span class="field-label">Categoría</span>
+          <select id="f-categoria">
+            <option value="playa">Playa</option>
+            <option value="comida">Comida</option>
+            <option value="cultural">Cultural</option>
+            <option value="aventura">Aventura</option>
+            <option value="naturaleza">Naturaleza</option>
+            <option value="otro">Otro</option>
+          </select>
+        </label>
+        <label class="field">
+          <span class="field-label">Editor (quién lo recomienda)</span>
+          <input type="text" id="f-editor" list="editors" required maxlength="40" placeholder="Tu nombre">
+          <datalist id="editors"></datalist>
+        </label>
+        <label class="field">
+          <span class="field-label">Imagen de referencia</span>
+          <input type="file" id="f-imagen" accept="image/*">
+        </label>
+        <div id="f-preview" class="preview hidden"></div>
+        <div class="form-actions">
+          <button type="button" id="btn-cancel" class="btn">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="settings-modal" class="modal hidden">
+    <div class="modal-box border-retro">
+      <div class="modal-header">
+        <h3 class="modal-title">Ajustes</h3>
+        <button id="btn-settings-close" class="btn btn-ghost" title="Cerrar">x</button>
+      </div>
+      <form id="settings-form" class="note-form">
+        <label class="field">
+          <span class="field-label">Personal Access Token</span>
+          <input type="password" id="s-token" placeholder="pega aquí tu token" autocomplete="off">
+        </label>
+        <p class="settings-hint">Se guarda solo en este navegador. Crea un token con permiso de Contents (lectura y escritura) para este repo.</p>
+        <div class="form-actions">
+          <button type="button" id="btn-settings-cancel" class="btn">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="onboarding" class="onboarding hidden">
+    <div class="ob-box border-retro">
+      <button id="ob-skip" class="ob-skip">saltar</button>
+      <div id="ob-steps" class="ob-steps"></div>
+      <div class="ob-controls">
+        <div class="ob-dots" id="ob-dots"></div>
+        <button id="ob-next" class="btn btn-primary">Siguiente</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/notes.js"></script>
+  <script src="js/settings.js"></script>
+  <script src="js/map.js"></script>
+  <script src="js/onboarding.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" role="img" aria-label="Comida">
+  <rect width="160" height="120" fill="#b86f50"/>
+  <path d="M28 56 q52 40 104 0 l0 24 q-52 30 -104 0 z" fill="#ffd93d"/>
+  <rect x="18" y="80" width="124" height="16" fill="#d9a066"/>
+  <rect x="42" y="46" width="18" height="14" fill="#ce1126"/>
+  <rect x="71" y="44" width="18" height="14" fill="#3e8948"/>
+  <rect x="100" y="48" width="18" height="14" fill="#e43d78"/>
+</svg>
