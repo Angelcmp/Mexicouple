@@ -200,7 +200,15 @@ button, .state, .filter-chip {
   min-height: 70vh;
 }
 
-.map { position: relative; }
+.map {
+  position: relative;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: grab;
+}
+
+.map:active { cursor: grabbing; }
 
 .map svg {
   display: block;
@@ -290,6 +298,54 @@ button, .state, .filter-chip {
   width: 12px;
   height: 12px;
   border: 2px solid var(--ink);
+}
+
+/* ---------- Controles de zoom ---------- */
+.map-controls {
+  position: absolute;
+  bottom: 40px;
+  right: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  z-index: 40;
+}
+
+.map-btn {
+  font-family: var(--font-pixel);
+  font-size: 14px;
+  line-height: 1;
+  color: var(--texto);
+  background: var(--panel);
+  border: 2px solid var(--ink);
+  box-shadow: 0 3px 0 0 var(--ink);
+  cursor: pointer;
+  width: 40px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.map-btn:hover { background: #33408a; }
+
+.map-btn:active {
+  transform: translateY(3px);
+  box-shadow: 0 0 0 0 var(--ink);
+}
+
+.map-btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+  transform: none;
+  box-shadow: 0 3px 0 0 var(--ink);
+}
+
+.map-btn-reset {
+  font-size: 8px;
+  width: auto;
+  padding: 0 8px;
 }
 
 /* ---------- Panel lateral ---------- */
